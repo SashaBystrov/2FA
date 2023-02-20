@@ -1,4 +1,6 @@
 import smtplib
+import pyotp
+import time
 def OtpravkaMail():
     '''Отправление сообщения на почту'''
     # Подключение к серверу и настройка TLS шифрования
@@ -12,4 +14,13 @@ def OtpravkaMail():
     # Разрыв соединения
     smtpObj.quit()
 
-def
+def GenPassword():
+    totp = pyotp.TOTP('base32secret3232')
+    print(pyotp.random_base32())
+    # OTP verified for current time
+    totp.verify('')
+    time.sleep(15)
+
+if __name__ == '__main__':
+    while True:
+        GenPassword()
