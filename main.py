@@ -1,6 +1,7 @@
 import smtplib
 import pyotp
 import time
+import fa
 def OtpravkaMail(kmail, kod):
     '''Отправление сообщения на почту'''
     # Подключение к серверу и настройка TLS шифрования
@@ -14,8 +15,16 @@ def OtpravkaMail(kmail, kod):
     # Разрыв соединения
     smtpObj.quit()
 
-if __name__ == '__main__':
-    while True:
-        # Создание кода для 2FA
-        kod = pyotp.random_base32()
-        OtpravkaMail(kmail, kod)
+def GetPassword():
+
+def main():
+
+if __name__ == 'main':
+    kod = fa.NewPassword()
+    OtpravkaMail(kod = kod, kmail= '')
+    if fa.VerifyPassword(pkod= '') == 0:
+        time.sleep(15)
+    else:
+        print('Пароль верный!!')
+
+
