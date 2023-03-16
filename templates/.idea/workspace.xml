@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab4c469e-6490-4b90-b6fc-7c369492b067" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../static/2fa.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../static/style1.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fa2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SendVerCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SendVerCode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../basedata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client.py" beforeDir="false" />
+    <list default="true" id="ab4c469e-6490-4b90-b6fc-7c369492b067" name="Changes" comment="con">
+      <change beforePath="$PROJECT_DIR$/../database.db" beforeDir="false" afterPath="$PROJECT_DIR$/../database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server.py" beforeDir="false" afterPath="$PROJECT_DIR$/../server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../static/home2style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../static/home2style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="De1pl &lt;sa.bystrov2004@mail.ru&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -175,10 +172,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.SendVerCode" />
-      <item itemvalue="Python.main (1)" />
-      <item itemvalue="Python.server" />
       <item itemvalue="Python.addSqlite" />
       <item itemvalue="Python.app" />
+      <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.server" />
       <item itemvalue="Shell Script.Unnamed" />
     </list>
     <recent_temporary>
@@ -200,12 +197,28 @@
       <option name="presentableId" value="Default" />
       <updated>1677760676308</updated>
     </task>
+    <task id="LOCAL-00001" summary="con">
+      <created>1678908392369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678908392369</updated>
+    </task>
+    <task id="LOCAL-00002" summary="con">
+      <created>1678908451337</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678908451337</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
     <option name="startingDirectory" value="C:\Users\De1pl\Desktop\Destop\Python\2FA" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="con" />
+    <option name="LAST_COMMIT_MESSAGE" value="con" />
   </component>
 </project>

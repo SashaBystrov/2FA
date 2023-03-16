@@ -4,6 +4,7 @@ import logging
 import re
 import secrets
 import sqlite3
+import time
 # Сторонние библиотеки
 from flask import Flask, g, request, render_template, redirect, url_for, session
 import pytz
@@ -152,6 +153,8 @@ def login():
         user_fa = query_db('SELECT fa FROM users WHERE username = ?', [username], one=True)[0]
         email_fa = query_db('SELECT email FROM users WHERE username = ?', [username], one=True)[0]
 
+        session['user_id'] = get_user_id(username)
+
         if user_fa == 1:
             # Генерируем и отправляем код на почту
             SendVerificationCode(email_fa, username)
@@ -160,7 +163,6 @@ def login():
         # Создаем запись о новой сессии
         session['token'] = secrets.token_hex(16)
         session['expires'] = datetime.now() + timedelta(hours=3)
-        session['user_id'] = get_user_id(username)
 
         return redirect(url_for('home'))
     else:
@@ -185,15 +187,21 @@ def fa2():
         ver_code = request.form['ver_code']
 
         if request.form['submit_button'] == 'retry_code':
+            time.sleep(15)
             SendVerificationCode(email, username)
 
             code_sent = True
 
         elif request.form['submit_button'] == 'submit':
             if ValidCode(username, ver_code):
+                # Создаем сессию
+                session['token'] = secrets.token_hex(16)
+                session['expires'] = datetime.now() + timedelta(hours=3)
+                session['user_id'] = get_user_id(username)
+
                 return redirect(url_for('home'))
             else:
-                return 'Неправильно введен код'
+                return 'Неправильно введен код', 400
 
     return render_template('fa2.html', code_sent=code_sent)
 
@@ -201,6 +209,7 @@ def fa2():
 @app.route('/home', methods=['POST', 'GET'])
 def home():
     """Личный кабинет"""
+
     if 'token' not in session:
         return redirect(url_for('login'))
 
