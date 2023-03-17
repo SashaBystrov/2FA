@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 import socket
 import logging
 import secrets
-import sqlite
+import sqlite3
 import hashlib
 
 logging.basicConfig(filename='logfile.log', level=logging.INFO)

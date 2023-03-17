@@ -157,7 +157,7 @@ def login():
 
         if user_fa == 1:
             # Генерируем и отправляем код на почту
-            SendVerificationCode(email_fa, username)
+            sendverificationcode(email_fa, username)
             return redirect(url_for('fa2'))
 
         # Создаем запись о новой сессии
@@ -188,12 +188,12 @@ def fa2():
 
         if request.form['submit_button'] == 'retry_code':
             time.sleep(15)
-            SendVerificationCode(email, username)
+            sendverificationcode(email, username)
 
             code_sent = True
 
         elif request.form['submit_button'] == 'submit':
-            if ValidCode(username, ver_code):
+            if valid_code(username, ver_code):
                 # Создаем сессию
                 session['token'] = secrets.token_hex(16)
                 session['expires'] = datetime.now() + timedelta(hours=3)
