@@ -15,10 +15,11 @@ def generate_password():
     # Генерируем 2 случайных числа в шестнадцатеричном формат
     secret_key1 = secrets.token_hex(6)
     secret_key2 = secrets.token_hex(6)
-    # Комбинируем два случайных числа в одну строку и хэшируем с помощью SHA-256
+    # Комбинируем два случайных числа в одну строку и
+    # хэшируем с помощью SHA-256
     combined_hash = hashlib.sha256((secret_key1 + secret_key2).encode('utf-8')).hexdigest()
-    # Получаем 7-значный пароль путем взятия остатка от деления хэша на 10^7
-    password = int(combined_hash, 16) % 10000000  # получаем 7-значный пароль
+    # Получаем 7-значный пароль
+    password = int(combined_hash, 16) % 10000000
     return str(password)
 
 
@@ -53,12 +54,14 @@ def sendverificationcode(email, username):
         # Сохраняем пароль в базе данных
         conn = sqlite3.connect('database.db')
         cursor = conn.cursor()
-        cursor.execute("UPDATE users SET onepassword = ? WHERE username = ?", (verification_code, username))
+        cursor.execute("UPDATE users SET onepassword = ? WHERE username = ?",
+                       (verification_code, username))
         conn.commit()
         conn.close()
 
         # Записываем информацию об успешной отправке
-        logging.info('Код подтверждения был успешно отправлен на адрес %s', email)
+        logging.info('Код подтверждения был успешно отправлен на адрес %s',
+                     email)
 
     except (socket.gaierror, socket.timeout) as e:
         logging.error('Ошибка подключения к серверу SMTP: %s', e)
@@ -75,7 +78,8 @@ def valid_code(username, ver_code):
     # Берем одноразовый код из базы данных
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT onepassword FROM users WHERE username = ?", (username,))
+    cursor.execute("SELECT onepassword FROM users WHERE username = ?",
+                   (username,))
     onepassword = cursor.fetchone()[0]
     conn.commit()
     conn.close()

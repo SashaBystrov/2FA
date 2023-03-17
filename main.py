@@ -6,7 +6,8 @@ import secrets
 import sqlite3
 import time
 # Сторонние библиотеки
-from flask import Flask, g, request, render_template, redirect, url_for, session
+from flask import Flask, g, request, render_template
+from flask import redirect, url_for, session
 import pytz
 # Модули текущего проекта
 from SendVerCode import sendverificationcode, valid_code
@@ -59,16 +60,16 @@ def init_db():
                          onepassword INTEGER DEFAULT 0 )''')
             db.commit()
         except sqlite3.Error as e:
-            logging.error('Ошибка при создании таблицы в базе данных SQLite', e)
+            logging.error('Ошибка при создании таблицы в SQLite', e)
             raise e
 
 
 def query_db(query, args=(), one=False):
     """Функция выполняет SQL-запрос к базе данных, используя соединение,
-    полученное из функции get_db().Запрос выполняется с помощью метода execute(),
-    который принимает два параметра: запрос SQL и список аргументов.
-    Если запрос успешно выполнен, то функция fetchall() получает все строки результата и
-    возвращает их в виде списка кортежей.
+    полученное из функции get_db().Запрос выполняется с помощью
+    метода execute(), который принимает два параметра: запрос SQL и
+    список аргументов. Если запрос успешно выполнен, то функция fetchall()
+    получает все строки результата и возвращает их в виде списка кортежей.
     """
     try:
         db = get_db()
@@ -89,7 +90,8 @@ def generate_token():
 
 def get_user_id(username):
     # Возвращение id пользователя по никнейму
-    result = query_db("SELECT id FROM users WHERE username = ?", (username,), one=True)
+    result = query_db("SELECT id FROM users WHERE username = ?",
+                      (username, ), one=True)
     return result[0]
 
 
@@ -110,20 +112,24 @@ def registration():
 
     # Проверяем данные  по шаблонам
     if not re.match(r'^\S+@\S+\.\S{2,}$', email):
-        return 'Error! Неправильный формат электронной почты! Формат: X...X@Y...Y', 400
+        return 'Error! Неправильный формат электронной почты!', 400
     elif not re.match(r'^[a-zA-Z0-9]{5,}$', username):
         return 'Error! Неправильный формат имени пользователя!', 400
-    elif not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$', password):
+    elif not re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$',
+                      password):
         return 'Error! Неправильный формат пароля!', 400
     try:
         # Проверем, есть ли пользователь в базе данных
-        if query_db('SELECT * FROM users WHERE username = ? OR email = ?', (username, email)):
-            return 'Error! Пользователь с этим именем или почтой уже зарегистрирован!', 400
+        if query_db('SELECT * FROM users WHERE username = ? OR email = ?',
+                    (username, email)):
+            return 'Error! Пользователь с этим именем или ' \
+                   'почтой уже зарегистрирован!', 400
         else:
             # Вставляем данные пользователя в базу данных SQLite
             db = get_db()
             cursor = db.cursor()
-            cursor.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
+            cursor.execute("INSERT INTO users (username, email, password)"
+                           " VALUES (?, ?, ?)",
                            (username, email, password))
             db.commit()
             cursor.close()
@@ -144,14 +150,17 @@ def login():
         password = request.form['password']
 
         # Проверяем существует ли пользователь в базе данных и проверяем пароль
-        user = query_db('SELECT id FROM users WHERE username = ? AND password = ?',
+        user = query_db('SELECT id FROM users WHERE username = ? '
+                        'AND password = ?',
                         (username, password), one=True)
         if not user:
             return 'Неправильный логин или пароль', 400
 
         # Проверяем включена ли 2fa у пользователя
-        user_fa = query_db('SELECT fa FROM users WHERE username = ?', [username], one=True)[0]
-        email_fa = query_db('SELECT email FROM users WHERE username = ?', [username], one=True)[0]
+        user_fa = query_db('SELECT fa FROM users WHERE username = ?',
+                           [username], one=True)[0]
+        email_fa = query_db('SELECT email FROM users WHERE username = ?',
+                            [username], one=True)[0]
 
         session['user_id'] = get_user_id(username)
 
@@ -176,7 +185,8 @@ def fa2():
     # Берем данные из сессии и базы данных
     user_id = session['user_id']
 
-    result = query_db("SELECT username, email FROM users WHERE id = ? ", (user_id,), one=True)
+    result = query_db("SELECT username, email FROM users WHERE id = ? ",
+                      (user_id,), one=True)
     username = result[0]
     email = result[1]
 
@@ -233,7 +243,8 @@ def home():
             db.commit()
         cursor.close()
 
-    result = query_db("SELECT username FROM users WHERE id = ?", (user_id,), one=True)
+    result = query_db("SELECT username FROM users WHERE id = ?",
+                      (user_id,), one=True)
     username = result[0]
 
     return render_template('home2.html', username=username)
