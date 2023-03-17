@@ -9,7 +9,7 @@ import time
 from flask import Flask, g, request, render_template, redirect, url_for, session
 import pytz
 # Модули текущего проекта
-from SendVerCode import SendVerificationCode, ValidCode
+from SendVerCode import sendverificationcode, valid_code
 
 
 logging.basicConfig(filename='logfile.log', level=logging.ERROR,
@@ -241,4 +241,4 @@ def home():
 
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run()
