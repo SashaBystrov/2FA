@@ -95,7 +95,7 @@ def get_user_id(username):
     return result[0]
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/')
 def index():
     # Главная страница
     return render_template('index.html')
@@ -252,4 +252,4 @@ def home():
 
 if __name__ == '__main__':
     init_db()
-    app.run()
+    app.run(threaded=True)
