@@ -95,13 +95,13 @@ def get_user_id(username):
     return result[0]
 
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     # Главная страница
     return render_template('index.html')
 
 
-@app.route('/register', methods=['POST'])
+@app.route('/register', methods=['POST', 'GET'])
 def registration():
     """Регистрация пользователя"""
 
@@ -119,7 +119,7 @@ def registration():
                       password):
         return 'Error! Неправильный формат пароля!', 400
     try:
-        # Проверем, есть ли пользователь в базе данных
+        # Проверяем, есть ли пользователь в базе данных
         if query_db('SELECT * FROM users WHERE username = ? OR email = ?',
                     (username, email)):
             return 'Error! Пользователь с этим именем или ' \
@@ -197,7 +197,7 @@ def fa2():
         ver_code = request.form['ver_code']
 
         if request.form['submit_button'] == 'retry_code':
-            time.sleep(15)
+            time.sleep(5)
             sendverificationcode(email, username)
 
             code_sent = True
