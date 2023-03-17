@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>2FA</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='home2style.css') }}">
+</head>
+<body>
+	<header>
+		<h1>Статья о 2FA</h1>
+		<h2>Добро пожаловать, {{ username }}!</h2>
+		<a class="button" onclick="openModal()">2FA</a>
+		<div id="myModal" class="modal">
+		  <div class="modal-content">
+			  <span class="close" onclick="closeModal()">&times;</span>
+			  <h2 style="font-size: 48px; color: black;">2FA</h2>
+			  <p style="color:black;">Вы уверены, что хотите подключить или отключить двухфакторную аутентификацию?</p>
+			  <form action="/home" method="post">
+				  <div class="buttons">
+					<button type="submit" name="submit_button" value="Подключить" class="confirm" onclick="closeModal('подключена')">Подключить</button>
+					<button type="submit" name="submit_button" value="Отключить" class="confirm" onclick="closeModal('отключена')">Отключить</button>
+				  </div>
+			  </form>
+		  </div>
+		</div>
+		<script>
+		  // открыть модальное окно
+		  function openModal() {
+			document.getElementById("myModal").style.display = "block";
+		  }
+		  // закрыть модальное окно и вывести сообщение
+		  function closeModal(status) {
+			document.getElementById("myModal").style.display = "none";
+			if (status === "подключена") {
+			  alert("Двухфакторная аутентификация подключена");
+			} else if (status === "отключена") {
+			  alert("Двухфакторная аутентификация отключена");
+			}
+		  }
+		</script>
+	</header>
+	<main>
+		<p>Двухфакторная аутентификация (2FA) - это метод проверки подлинности, требующий двух разных способов подтверждения личности пользователя перед доступом к системе. Это может включать в себя сочетание пароля и кода, отправленного на устройство пользователя, или использование биометрических данных, таких как отпечатки пальцев или распознавание лица.</p>
+		<p>2FA используется в качестве дополнительного слоя защиты для учетных записей, чтобы предотвратить несанкционированный доступ, даже если злоумышленники получат доступ к паролю пользователя. Это особенно важно для защиты чувствительных данных, таких как финансовые и медицинские данные.</p>
+		<p>Существует множество различных методов 2FA, включая SMS-коды, приложения аутентификации, аппаратные ключи и биометрические данные. Каждый метод имеет свои преимущества и недостатки, и лучший выбор зависит от конкретной ситуации.</p>
+		<p>В целом, использование 2FA является одним из наиболее эффективных способов защиты учетных записей и предотвращения кибератак. Рекомендуется использовать 2FA для всех важных аккаунтов, таких как банковские и медицинские учетные записи, почтовые ящики и учетные записи в социальных сетях.</p>
+	</main>
+	<footer>
+		<p>Автор: Alexsandr Bystrov</p>
+	</footer>
+</body>
+</html>

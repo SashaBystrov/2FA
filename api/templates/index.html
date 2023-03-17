@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2FA SignUp</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<p>2FA by Alexsandr Bystrov</p>
+	<p class="p1"> RTU MIREA БББО-01-22</p>
+	<div class="main">
+		<div class="signup">
+				<form method="post" action="/register">
+					<label>SignUp</label>
+					<input type="text" name="username" placeholder="Имя пользователя" required="">
+					<input type="email" name="email" placeholder="Почта" required="">
+					<input type="password" name="password" placeholder="Пароль" required="">
+					<button>Sign Up</button>
+					<h5>Уже есть аккаунт? <a href="/login">Войти</a></h5>
+				</form>
+		</div>
+	</div>
+</body>
+</html>
