@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab4c469e-6490-4b90-b6fc-7c369492b067" name="Changes" comment="con">
-      <change beforePath="$PROJECT_DIR$/../api/SendVerCode.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/database.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/templates.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/2fa.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/home2style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/static/style1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/fa2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/home2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SendVerCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SendVerCode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database.db" beforeDir="false" afterPath="$PROJECT_DIR$/../database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../vercel.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679077927656</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="con">
+      <created>1679133049395</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679133049395</updated>
+    </task>
+    <task id="LOCAL-00011" summary="con">
+      <created>1679133099372</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679133099372</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">

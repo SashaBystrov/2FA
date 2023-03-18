@@ -1,13 +1,12 @@
-import smtplib
+# Встроенные библиотеки
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import socket
+import hashlib
 import logging
 import secrets
+import smtplib
+import socket
 import sqlite3
-import hashlib
-
-logging.basicConfig(filename='logfile.log', level=logging.INFO)
 
 
 def generate_password():
@@ -64,11 +63,11 @@ def sendverificationcode(email, username):
                      email)
 
     except (socket.gaierror, socket.timeout) as e:
-        logging.error('Ошибка подключения к серверу SMTP: %s', e)
+        logging.warning('Ошибка подключения к серверу SMTP: %s', e)
     except smtplib.SMTPAuthenticationError as e:
-        logging.error('Ошибка аутентификации: %s', e)
+        logging.warning('Ошибка аутентификации: %s', e)
     except (smtplib.SMTPRecipientsRefused, smtplib.SMTPSenderRefused, smtplib.SMTPDataError) as e:
-        logging.error('Ошибка доставки сообщения: %s', e)
+        logging.warning('Ошибка доставки сообщения: %s', e)
 
 
 # Проверка кода

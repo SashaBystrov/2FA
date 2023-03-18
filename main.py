@@ -1,4 +1,4 @@
-# Стандартные библиотеки
+# Встроенные библиотеки
 from datetime import datetime, timedelta
 import logging
 import re
@@ -12,9 +12,6 @@ import pytz
 # Модули текущего проекта
 from SendVerCode import sendverificationcode, valid_code
 
-
-logging.basicConfig(filename='logfile.log', level=logging.ERROR,
-                    format='%(asctime)s %(message)s', filemode='w')
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(32)
@@ -30,7 +27,7 @@ def get_db():
         try:
             db = g._database = sqlite3.connect(DATABASE)
         except sqlite3.Error as e:
-            logging.error('Ошибка при подключении к базе данных', e)
+            logging.warning('Ошибка при подключении к базе данных', e)
             raise e
     return db
 
@@ -60,7 +57,7 @@ def init_db():
                          onepassword INTEGER DEFAULT 0 )''')
             db.commit()
         except sqlite3.Error as e:
-            logging.error('Ошибка при создании таблицы в SQLite', e)
+            logging.warning('Ошибка при создании таблицы в SQLite', e)
             raise e
 
 
@@ -79,7 +76,7 @@ def query_db(query, args=(), one=False):
         cursor.close()
         return (rv[0] if rv else None) if one else rv
     except sqlite3.Error as e:
-        logging.error('Ошибка при выполнении запроса в базе данных SQLite')
+        logging.warning('Ошибка при выполнении запроса в базе данных SQLite')
         raise e
 
 
@@ -137,7 +134,7 @@ def registration():
             return redirect(url_for('login'))
 
     except sqlite3.Error as e:
-        logging.error('Ошибка при обработке данных в базе данных SQLite')
+        logging.warning('Ошибка при обработке данных в базе данных SQLite')
         raise e
 
 
