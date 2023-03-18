@@ -30,7 +30,7 @@ def sendverificationcode(email, username):
 
     # Данные моей почты для отправки писем
     mylogin_mail = 'sa.bystrov2004@mail.ru'
-    mypassword_mail = 'X9daFdDL5zC16gWaB4aQ'
+    mypassword_mail = 'ryw5ZAYLQPQ7d32nSEiZ'
 
     # Создаем объект сообщения
     message = MIMEMultipart()

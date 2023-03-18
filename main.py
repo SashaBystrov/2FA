@@ -248,6 +248,8 @@ def home():
 
 
 if __name__ == '__main__':
-    import bjoern
+    """import bjoern
     init_db()
-    bjoern.run(app, "127.0.0.1", 8000)
+    bjoern.run(app, "127.0.0.1", 8000)"""
+    init_db()
+    app.run(debug=True, port=8000)
