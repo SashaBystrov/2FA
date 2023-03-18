@@ -248,5 +248,6 @@ def home():
 
 
 if __name__ == '__main__':
+    import bjoern
     init_db()
-    app.run(threaded=True)
+    bjoern.run(app, "127.0.0.1", 8000)
