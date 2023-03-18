@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab4c469e-6490-4b90-b6fc-7c369492b067" name="Changes" comment="con" />
+    <list default="true" id="ab4c469e-6490-4b90-b6fc-7c369492b067" name="Changes" comment="con">
+      <change beforePath="$PROJECT_DIR$/../api/SendVerCode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/templates.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/2fa.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/home2style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/static/style1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/fa2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/home2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vercel.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,6 +117,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="templates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="templates" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,11 +167,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../api/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,7 +180,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="templates" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -141,11 +188,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -202,10 +249,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main (2)" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.main (2)" />
       <item itemvalue="Python.SendVerCode" />
       <item itemvalue="Python.addSqlite" />
+      <item itemvalue="Python.app" />
       <item itemvalue="Python.main (1)" />
       <item itemvalue="Python tests.Python tests in main.py" />
       <item itemvalue="Python tests.pytest in main.py" />
@@ -293,42 +341,7 @@
       <option name="project" value="LOCAL" />
       <updated>1679077927656</updated>
     </task>
-    <task id="LOCAL-00010" summary="con">
-      <created>1679080811033</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1679080811033</updated>
-    </task>
-    <task id="LOCAL-00011" summary="con">
-      <created>1679080872034</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1679080872034</updated>
-    </task>
-    <task id="LOCAL-00012" summary="con">
-      <created>1679080956338</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1679080956338</updated>
-    </task>
-    <task id="LOCAL-00013" summary="con">
-      <created>1679081836123</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1679081836123</updated>
-    </task>
-    <task id="LOCAL-00014" summary="con">
-      <created>1679083274859</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1679083274859</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
